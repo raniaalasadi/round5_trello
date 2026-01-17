@@ -1,0 +1,2 @@
+export const APIKey = "cea9036fde2755fb380d82df844e382b"
+export const APIToken = "ATTAd01196189ae24505ab1d850186f67bcd31e893b7a70040277ccb272c29c2b442AA9F0101"

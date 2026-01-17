@@ -7,19 +7,26 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('loginToTrello', () => {
+  cy.visit('/login')
+  cy.wait(3000)
+  cy.fixture("trelloUser").then((data) => {
+    cy.findByTestID("username").type(data.email)
+    cy.findByTestID("login-submit-idf-testid").click()
+    cy.wait(2000)
+    cy.findByTestID("password").type(data.password)
+    cy.findByTestID("login-submit-idf-testid").click()
+    cy.wait(6000)
+  })
+})
+
+
+Cypress.Commands.add('findByTestID', (dataTestId) => {
+  cy.get(`[data-testid="${dataTestId}"]`);
+});
+
+
+
+
+
