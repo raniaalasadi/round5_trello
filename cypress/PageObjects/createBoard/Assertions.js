@@ -1,7 +1,7 @@
 class createBoardAssertions {
 
   checkBoardNameIsEqual(boardName) {
-    cy.findByTestID("board-name-display").should("contain",boardName)
+    cy.findByTestID("board-name-display").should("contain", boardName)
     return this
   }
 
