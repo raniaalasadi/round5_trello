@@ -11,11 +11,14 @@ class DataUtils {
   }
 
   createCard = (cardName, boardID) => {
-    return cy.request("GET", `https://api.trello.com/1/boards/${boardID}/lists?&key=${APIKey}&token=${APIToken}`
-      ).then((response) => {
+    return cy.request("GET", `https://api.trello.com/1/boards/${boardID}/lists?&key=${APIKey}&token=${APIToken}`).then((response) => {
         const listId = response.body[0].id
         return cy.request("POST", `https://api.trello.com/1/cards?name=${cardName}&idList=${listId}&key=${APIKey}&token=${APIToken}`)
       })
+  }
+
+  createList = (listName, boardID) => {
+    return cy.request("POST",`https://api.trello.com/1/lists?name=${listName}&idBoard=${boardID}&key=${APIKey}&token=${APIToken}` )
   }
 
 }

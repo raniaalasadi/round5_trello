@@ -15,3 +15,8 @@
 
 // Import commands.js using ES2015 syntax:
 import "./commands.js";
+
+// // import '@testing-library/cypress/add-commands'
+// Cypress.on('uncaught:exception', (err, runnable) => {
+//   if (err.message.includes('postMessage')) {
+//     return false
