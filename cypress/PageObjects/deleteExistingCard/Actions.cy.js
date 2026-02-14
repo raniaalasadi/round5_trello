@@ -5,6 +5,11 @@ class DeleteCardActions {
     return this
   }
 
+  takeScreenshotFullPageAfterOpenBoard () {
+    cy.screenshot('board-full', { capture: 'fullPage' })
+    return this
+}
+
   openCard(cardName) {
     cy.findByTestID("card-name").click()
     return this

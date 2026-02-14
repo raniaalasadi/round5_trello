@@ -25,7 +25,8 @@ Before({ tags: "@deleteCard" }, () => {
 })
 
 Given("The user open the board {string}", () => {
-  deleteCardActions.openBoard(boardURL)
+  deleteCardActions.openBoard(boardURL).takeScreenshotFullPageAfterOpenBoard()
+
 })
 
 Given("The user open the Existing Card {string}", () => {
