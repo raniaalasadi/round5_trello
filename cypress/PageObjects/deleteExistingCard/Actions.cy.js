@@ -6,7 +6,7 @@ class DeleteCardActions {
   }
 
   takeScreenshotFullPageAfterOpenBoard () {
-    cy.screenshot('board-full', { capture: 'fullPage' })
+    cy.screenshot({capture:"fullPage"})
     return this
 }
 
