@@ -6,7 +6,7 @@ class DeleteCardActions {
   }
 
   takeScreenshotFullPageAfterOpenBoard () {
-    cy.screenshot({capture:"fullPage"})
+    cy.screenshot("TrelloScreenShot",{capture:"fullPage"})
     return this
 }
 
